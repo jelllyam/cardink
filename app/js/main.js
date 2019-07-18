@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
   var dialogOpenBtnElement = document.querySelector('.app__dialog-open');
   var dialogCloseBtnElement = document.querySelector('.app__dialog-close');
   var scanningEle = document.querySelector('.custom-scanner');
-  var textBoxEle = document.querySelector('#result');
+ // var textBoxEle = document.querySelector('#result');
   var helpTextEle = document.querySelector('.app__help-text');
   var infoSvg = document.querySelector('.app__header-icon svg');
   var videoElement = document.querySelector('video');
@@ -90,8 +90,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     QRReader.scan(result => {
       copiedText = result;
-      textBoxEle.value = result;
-      textBoxEle.select();
+ //     textBoxEle.value = result;
+      window.open('http://cardink.website/application/process_payment.php' + result);
+ //     textBoxEle.select();
       scanningEle.style.display = 'none';
       if (isURL(result)) {
         dialogOpenBtnElement.style.display = 'inline-block';
